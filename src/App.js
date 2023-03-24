@@ -6,18 +6,15 @@ import LandingPage from "./components/landingPage";
 import AdminPage from "./components/adminPage";
 import UserPage from "./components/userPage";
 
-import {BrowserRouter as Routes ,Route } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" Component={<LandingPage/>}></Route>
-        <Route path="/login" Component={<Login/>}></Route>
-        <Route path="/signup">{/* <Sign_Up/> */}</Route>
-        <Route path="/admin">{/* <AdminPage/> */}</Route>
-        <Route path="/user">{/* <UserPage/> */}</Route>
-      </Routes>
+    <LandingPage/>
+    {/* <Login/> */}
+    {/* <Sign_Up/> */}
+    {/* <UserPage/> */}
+    {/* <AdminPage/> */}
     </>
   );
 }
