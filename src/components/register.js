@@ -1,27 +1,29 @@
 import React from "react";
+import Header from "./header";
 
 export default function Sign_Up() {
   return (
     <>
-      <div class="bg-gray-800">
-        <div class="p-8 lg:w-1/2 mx-auto">
-          <div class="bg-gray-100 rounded-b-lg py-12 px-4 lg:px-24">
-            <p class="text-center text-sm text-gray-500 font-light">
+      <Header/>
+      <div className="">
+        <div className="p-8 lg:w-1/2 mx-auto">
+          <div className="bg-gray-100 rounded-b-lg py-12 px-4 lg:px-24">
+            <p className="text-center text-sm text-gray-500 font-light">
               {" "}
               Registrarsé{" "}
             </p>
-            <form class="mt-6">
-              <div class="relative">
+            <form className="mt-6">
+              <div className="relative">
                 <input
-                  class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                  className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
                   id="username"
                   type="text"
                   placeholder="Email"
                 />
-                <div class="absolute left-0 inset-y-0 flex items-center">
+                <div className="absolute left-0 inset-y-0 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7 ml-3 text-gray-400 p-1"
+                    className="h-7 w-7 ml-3 text-gray-400 p-1"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -29,17 +31,17 @@ export default function Sign_Up() {
                   </svg>
                 </div>
               </div>
-              <div class="relative mt-3">
+              <div className="relative mt-3">
                 <input
-                  class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                  className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
                   id="username"
                   type="text"
                   placeholder="Email"
                 />
-                <div class="absolute left-0 inset-y-0 flex items-center">
+                <div className="absolute left-0 inset-y-0 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7 ml-3 text-gray-400 p-1"
+                    className="h-7 w-7 ml-3 text-gray-400 p-1"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -48,17 +50,17 @@ export default function Sign_Up() {
                   </svg>
                 </div>
               </div>
-              <div class="relative mt-3">
+              <div className="relative mt-3">
                 <input
-                  class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                  className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
                   id="username"
                   type="text"
                   placeholder="Password"
                 />
-                <div class="absolute left-0 inset-y-0 flex items-center">
+                <div className="absolute left-0 inset-y-0 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7 ml-3 text-gray-400 p-1"
+                    className="h-7 w-7 ml-3 text-gray-400 p-1"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -67,28 +69,28 @@ export default function Sign_Up() {
                 </div>
               </div>
 
-              <p class="mt-4 italic text-gray-500 font-light text-xs">
+              <p className="mt-4 italic text-gray-500 font-light text-xs">
                 Password strength:{" "}
-                <span class="font-bold text-green-400">strong</span>
+                <span className="font-bold text-green-400">strong</span>
               </p>
-              <div class="mt-4 flex items-center text-gray-500">
+              <div className="mt-4 flex items-center text-gray-500">
                 {" "}
                 <input
                   type="checkbox"
                   id="remember"
                   name="remember"
-                  class="mr-2"
+                  className="mr-2"
                 />{" "}
-                <label class="text-sm" for="remember">
+                <label className="text-sm" for="remember">
                   I agree with the{" "}
-                  <a class="text-indigo-400 hover:text-indigo-500">
+                  <a className="text-indigo-400 hover:text-indigo-500">
                     Privacy Policy
                   </a>
                 </label>{" "}
               </div>
-              <div class="flex items-center justify-center mt-8">
+              <div className="flex items-center justify-center mt-8">
                 {" "}
-                <button class="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+                <button className="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                   {" "}
                   Create Account{" "}
                 </button>{" "}

@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "./header";
 
 export default function Login() {
   return (
     <>
-		<div class="">
-    <div class="p-8 lg:w-1/2 mx-auto">
+		<Header/>
+    <div class="p-8 lg:w-1/2 m-auto">
       <div class="bg-gray-100 rounded-lg py-12 px-4 lg:px-24 shadow-lg">
         <p class="text-center text-sm text-gray-500 font-light">
           Iniciar Sesión
@@ -67,7 +68,7 @@ export default function Login() {
         </form>
       </div>
     </div>
-  </div>
+  
     </>
   );
 }
