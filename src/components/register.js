@@ -10,7 +10,7 @@ export default function Sign_Up() {
           <div className="bg-gray-100 rounded-b-lg py-12 px-4 lg:px-24">
             <p className="text-center text-sm text-gray-500 font-light">
               {" "}
-              Registrarsé{" "}
+              registrarse{" "}
             </p>
             <form className="mt-6">
               <div className="relative">
@@ -18,7 +18,7 @@ export default function Sign_Up() {
                   className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
                   id="username"
                   type="text"
-                  placeholder="Email"
+                  placeholder="Name"
                 />
                 <div className="absolute left-0 inset-y-0 flex items-center">
                   <svg
@@ -69,10 +69,10 @@ export default function Sign_Up() {
                 </div>
               </div>
 
-              <p className="mt-4 italic text-gray-500 font-light text-xs">
+              {/* <p className="mt-4 italic text-gray-500 font-light text-xs">
                 Password strength:{" "}
                 <span className="font-bold text-green-400">strong</span>
-              </p>
+              </p> */}
               <div className="mt-4 flex items-center text-gray-500">
                 {" "}
                 <input
