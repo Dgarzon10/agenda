@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -26,12 +27,12 @@ export default function Header() {
           <span className="ml-3 text-xl xl:block lg:hidden">Agenda</span>
         </a>
         <div className="lg:w-2/5 inline-flex gap-1 lg:justify-end ml-5 lg:ml-0">
-          <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:ring hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+          <NavLink to="/user" className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:ring hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
             Registro
-          </button>
-          <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:ring hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+          </NavLink>
+          <NavLink to="/admin" className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:ring hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
             Iniciar Sesión
-          </button>
+          </NavLink>
         </div>
       </div>
     </header>
