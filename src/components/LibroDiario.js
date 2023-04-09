@@ -9,30 +9,38 @@ export default function LibroDiario() {
     periodicidad: false,
   });
 
-  const [Cartera, setCartera] = useState([2220, 2000, 3000, 4000,1110, 21230, 341240, 40000,9900, 27500, 5003]);
+  const [Cartera, setCartera] = useState([]);
 
-  // const guardar=()=>{
-  //   console.log("EXITO")
-  //   //setDinero[cantidad]=document.querySelector('#dinero').value;  //
-  //   setDinero([...Dinero,cantidad:document.querySelector('#dinero').value])
-  // }
+  const [Balance, setBalance] = useState(0)
+
+  useEffect(() => {
+    const balanceSaldo=()=>{
+      let balance=0;
+      Cartera.map((e)=>{
+        balance+=e;
+      })
+      setBalance((balance))
+    }
+    balanceSaldo()
+  }, [Cartera])
+  
 
   const ChangeCantidad = (e) => {
     let updatedValue = {};
-    updatedValue = { cantidad: e.target.value };
+    updatedValue = { cantidad: parseInt(e.target.value) };
     setDinero((cantidad) => ({
       ...cantidad,
       ...updatedValue,
     }));
   };
-  const ChangeTitulo = (e) => {
-    let updatedValue = {};
-    updatedValue = { titulo: e.target.value };
-    setDinero((titulo) => ({
-      ...titulo,
-      ...updatedValue,
-    }));
-  };
+  // const ChangeTitulo = (e) => {
+  //   let updatedValue = {};
+  //   updatedValue = { titulo: e.target.value };
+  //   setDinero((titulo) => ({
+  //     ...titulo,
+  //     ...updatedValue,
+  //   }));
+  // };
   const ChangePeriodico = (e) => {
     let updatedValue = {};
     updatedValue = { periodicidad: e.target.value };
@@ -48,9 +56,8 @@ export default function LibroDiario() {
       ...tipo,
       ...updatedValue,
     }));
-    setCartera((cartera) => [...cartera, Dinero.cantidad]);
-    document.getElementById("dinero").innerHTML = "";
-    document.getElementById("titulo").innerHTML = "";
+    setCartera(oldArray => [...oldArray, Dinero.cantidad]);
+    console.log(document.querySelector('#dinero').value=' ')
   };
 
   return (
@@ -89,7 +96,7 @@ export default function LibroDiario() {
                 </ul>
               </div>
               <form className="pt-10  mx-2 flex flex-col gap-4">
-                <div className="grid md:grid-cols-2 md:gap-6">
+                <div className="grid  md:gap-6">
                   <div className="relative z-0 w-full mb-6 group">
                     <input
                       onChange={(e) => ChangeCantidad(e)}
@@ -98,7 +105,7 @@ export default function LibroDiario() {
                       id="dinero"
                       className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
-                      required
+                      
                     />
                     <label
                       htmlFor="floating_first_name"
@@ -107,7 +114,7 @@ export default function LibroDiario() {
                       Ingrese Dinero
                     </label>
                   </div>
-                  <div className="relative z-0 w-full mb-6 group">
+                  {/* md:grid-cols-2 <div className="relative z-0 w-full mb-6 group">
                     <input
                       onChange={(e) => ChangeTitulo(e)}
                       type="text"
@@ -123,7 +130,7 @@ export default function LibroDiario() {
                     >
                       Titulo Transaccion
                     </label>
-                  </div>
+                  </div> */}
                 </div>
                 <div>
                   <label
@@ -161,20 +168,51 @@ export default function LibroDiario() {
                 </div>
                 <button
                   onClick={guardar}
-                  type=""
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  type="button"
+                  className="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Submit
                 </button>
               </form>
             </div>
-            <div className="w-2/3 grid ">
-              <div className="w-3/4 h-4/5 bg-zinc-600 m-auto rounded-2xl flex flex-col justify-center items-center">
-                <ul className="">
-                  {Cartera.map((e) => {
-                    return <li key={e + Cartera.length}>{e}</li>;
-                  })}
-                </ul>
+            <div className="flex flex-col w-full h-full gap-2">
+              <div className=" h-5/6 w-full dark:bg-gray-800 grid grid-cols-3 gap-2 mt-2">
+                <div className="flex items-center justify-center h-full rounded dark:bg-gray-500 ml-2 relative">
+                  <h2 className="text-2x dark:text-gray-300 absolute top-2">
+                    Contabilidad Hoy
+                  </h2>
+                  <div className="">
+                    <ul>
+                      {Cartera.map((e,index) => {
+                        return <li key={e + index+1}>{e}</li>;
+                      })}
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center h-full rounded dark:bg-gray-500 relative">
+                  <h2 className="text-2x dark:text-gray-300 absolute top-2">
+                    Contabilidad Semanal
+                  </h2>
+                  <div className=""></div>
+                </div>
+                <div className="flex items-center justify-center h-full rounded dark:bg-gray-500 mr-2 relative">
+                  <h2 className="text-2x dark:text-gray-300 absolute top-2">
+                    Contabilidad Mensual
+                  </h2>
+                  <div className=""></div>
+                </div>
+              </div>
+
+              <div className=" h-1/6 w-full dark:bg-gray-800 grid grid-cols-3 gap-2 mb-1">
+                <div className="flex items-center justify-center h-full rounded dark:bg-gray-500 ml-2 ">
+                  <div>
+                    {Balance<0?
+                    <h2 className=" text-red-600">{Balance}</h2>:
+                    <h2 className=" text-gray-300">{Balance}</h2>}
+                  </div>
+                </div>
+                <div className="flex items-center justify-center h-full rounded dark:bg-gray-500 "></div>
+                <div className="flex items-center justify-center h-full rounded dark:bg-gray-500 mr-2 "></div>
               </div>
             </div>
           </div>
